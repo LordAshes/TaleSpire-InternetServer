@@ -42,6 +42,10 @@ http://host/MessageServerSQL.php
 
 This causes the server to go through all transactions and throw out any messages that are older than 30 days.
 
+## Testing
+
+Because all of the server operations are done through HTTP GET methods, you can verify that your requests are valid just by plugging them into your web browser address bar. For message posting and cleaning operations you will not get any response back (this is intentional so that clients can determine between responses from gets and responses from posts) while get operations will always return something. If there are no new messages, it will return the last transaction id (which may or may not be the same as the one provided). If there are messages the first line will be the transaction id followed by all of the messages. The server uses a | seperation output.
+
 
 
 
