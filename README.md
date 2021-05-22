@@ -9,7 +9,7 @@ The purpose of this plugin is to allow mods/plugins to communicate to the other 
 
 Host the MessageServerSQL.php files on a internet hosting site and use the BuildSQLDatabase.sql file to create the necessary MySQL database table.
 Note: Do not host this on your local computer unless you have ensured that remote computers can route to it, otherwise the firewall will still be a problem.
-My testing was done using the free hosting package offered by www.byethost.com but the solution is not specific to that hosting site. Any site that
+My testing was done using the free hosting package offered by awardsspace.com but the solution is not specific to that hosting site. Any site that
 supports PHP 7.4 (or higher) and a MySQL database should be able to host this server.
 
 ## How It Works
@@ -46,7 +46,9 @@ This causes the server to go through all transactions and throw out any messages
 
 Because all of the server operations are done through HTTP GET methods, you can verify that your requests are valid just by plugging them into your web browser address bar. For message posting and cleaning operations you will not get any response back (this is intentional so that clients can determine between responses from gets and responses from posts) while get operations will always return something. If there are no new messages, it will return the last transaction id (which may or may not be the same as the one provided). If there are messages the first line will be the transaction id followed by all of the messages. The server uses a | seperation output.
 
+Note:
 
+This sever does not work with byethost.com hosting because that site requires javascript to process the page which the basic WebClient does not have.
 
 
 
