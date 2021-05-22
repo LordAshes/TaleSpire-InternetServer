@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 CREATE TABLE `transactions` (
   `trans` bigint(20) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `session` varchar(32) NOT NULL,
+  `session` varchar(128) NOT NULL,
   `sender` varchar(32) NOT NULL,
   `message` longtext NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
